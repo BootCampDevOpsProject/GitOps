@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  #ENVIRONMENT: dev#
+  #GO_ENV: dev#
+  #variables de ambiente con indentacion"
+kind: ConfigMap
+metadata:
+  name: #project_name#-configmap

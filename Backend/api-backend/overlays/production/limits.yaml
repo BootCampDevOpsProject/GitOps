@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: #project_name#
+spec:
+  template:
+    spec:
+      containers:
+      - name: #project_name#
+        resources:
+          limits:
+            cpu: 200m
+            memory: 250Mi
+          requests:
+            cpu: 120m
+            memory: 150Mi
