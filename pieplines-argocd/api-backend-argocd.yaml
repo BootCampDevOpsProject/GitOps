@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: Backend/api-backend
+    path: Backend/api-backend/overlays/development
     repoURL: https://github.com/BootCampDevOpsProject/GitOps.git
     targetRevision: main
   syncPolicy:
