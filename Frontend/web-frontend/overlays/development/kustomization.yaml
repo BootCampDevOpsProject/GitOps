@@ -6,4 +6,4 @@ resources:
 images:
 - name: serret18/web-frontend
   newName: serret18/web-frontend
-  newTag: 161e84ad20a90a3be7fefa32783cfc4719c3b87b
+  newTag: 0c8947cf113118a85df45a14e497b8ec2acc37a9
