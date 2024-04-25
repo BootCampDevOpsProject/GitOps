@@ -9,3 +9,7 @@ resources:
 patches:
 - path: ./limits.yaml
 - path: ./tolerations.yaml
+images:
+- name: serret18/web-frontend-production
+  newName: serret18/web-frontend-production
+  newTag: fcc70be6c2d0533eb4434b4529858f532dff01eb
