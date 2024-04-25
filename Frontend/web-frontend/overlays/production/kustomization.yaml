@@ -12,4 +12,4 @@ patches:
 images:
 - name: serret18/web-frontend-production
   newName: serret18/web-frontend-production
-  newTag: fcc70be6c2d0533eb4434b4529858f532dff01eb
+  newTag: 02d727b2c0cc642d75a6fe4eac84905cd57db590
