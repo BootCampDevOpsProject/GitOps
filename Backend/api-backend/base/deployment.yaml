@@ -4,7 +4,7 @@ metadata:
   name: api-backend
   annotations:
     configmap.reloader.stakater.com/reload: "api-backend-configmap" 
-    secret.reloader.stakater.com/reload: "api-backend-secret"
+    #secret.reloader.stakater.com/reload: "api-backend-secret"
 spec:
   selector:
     matchLabels:
@@ -19,8 +19,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: api-backend-configmap
-            - secretRef:
-                name: api-backend-secret
+           #- secretRef:
+              #  name: api-backend-secret
           image: serret18/api-backend
           imagePullPolicy: Always
           ports:
