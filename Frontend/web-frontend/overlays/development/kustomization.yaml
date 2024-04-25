@@ -9,3 +9,6 @@ images:
 - name: serret18//web-frontend
   newName: serret18//web-frontend
   newTag: c26da62662c2860f1c0b3e022256cd74b86c86be
+- name: serret18/web-frontend
+  newName: serret18/web-frontend
+  newTag: d27a2d2404662aea104e87c1535f76b81c66e4dc
