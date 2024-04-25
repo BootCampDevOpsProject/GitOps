@@ -2,6 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../../base
-- ingress.yaml
+#- ingress.yaml
 - configmap.yaml
-- ./secret.yaml
+#- ./secret.yaml
+images:
+- name: serret18/api-backend
+  newName: serret18/api-backend
+  newTag: 4c809afd27fd2c09376b80bb7df88d9dbe779556
