@@ -8,4 +8,4 @@ resources:
 images:
 - name: serret18/api-backend
   newName: serret18/api-backend
-  newTag: 93a3d897d37894e74199e9a60f1329247c556024
+  newTag: 15499027f9f5c19b8d890e02196448a66594eb09
