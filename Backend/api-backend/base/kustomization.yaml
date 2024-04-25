@@ -3,4 +3,7 @@ kind: Kustomization
 resources:
 - deployment.yaml
 - service.yaml
-
+images:
+- name: serret18/api-backend
+  newName: serret18/api-backend
+  newTag: 4c809afd27fd2c09376b80bb7df88d9dbe779556
