@@ -4,15 +4,15 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx-internal
   creationTimestamp: null
-  name: #project_name#-ingress
+  name: web-frontend-ingress
 spec:
   rules:
-  - host: #project_name#.svc.dev.occ
+  - host: web-frontend.svc.dev.occ
     http:
       paths:
       - backend:
           service:
-            name: #project_name#-svc
+            name: web-frontend-svc
             port:
               number: 80
         path: /

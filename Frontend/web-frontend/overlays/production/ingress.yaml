@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: #project_name#-ingress
+  name: web-frontend-ingress
   annotations:
     kubernetes.io/ingress.class: nginx-internal
 spec:
   rules:
-    - host: #project_name#.prod.svc.occ
+    - host: web-frontend.prod.svc.occ
       http:
         paths:
           - backend:
-              serviceName: #project_name#-svc
+              serviceName: web-frontend-svc
               servicePort: 80
             path: /
 

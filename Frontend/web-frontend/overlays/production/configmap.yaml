@@ -5,4 +5,4 @@ data:
   #variables de ambiente con indentacion"
 kind: ConfigMap
 metadata:
-  name: #project_name#-configmap
+  name: web-frontend-configmap

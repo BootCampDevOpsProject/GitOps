@@ -1,44 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: #project_name#
+  name: web-frontend
   annotations:
-    configmap.reloader.stakater.com/reload: "#project_name#-configmap" 
-    secret.reloader.stakater.com/reload: "#project_name#-secret"
+    configmap.reloader.stakater.com/reload: "web-frontend-configmap" 
+    #secret.reloader.stakater.com/reload: "web-frontend-secret"
 spec:
   selector:
     matchLabels:
-      app: #project_name#
+      app: web-frontend
   template:
     metadata:
       labels:
-        app: #project_name#
+        app: web-frontend
     spec:
       containers:
-        - name: #project_name#
+        - name: web-frontend
           envFrom:
             - configMapRef:
-                name: #project_name#-configmap
-            - secretRef:
-                name: #project_name#-secret
-          image: #dcokerhub_repo_name/#project_name#
+                name: web-frontend-configmap
+            #- secretRef:
+                #name: web-frontend-secret
+          image: serret18/web-frontend
           imagePullPolicy: Always
           ports:
-            - containerPort: #PORT#
+            - containerPort: 5173
               name: http
               protocol: TCP
-          readinessProbe:
-            failureThreshold: 2
-            httpGet:
-              path: #RUTA_HEALTH#
-              port: #PORT#
-            initialDelaySeconds: 5
             periodSeconds: 60
-          livenessProbe:
-            failureThreshold: 2
-            httpGet:
-              path: #RUTA_HEALTH#
-              port: #PORT#
-            periodSeconds: 60
-      imagePullSecrets:
-        - name: docker-registry
