@@ -19,7 +19,6 @@ spec:
     spec:
       hostRootFsMount:
         enabled: false
-      mountPropagation: HostToContainer
       containers:
       - args:
         - --path.sysfs=/host/sys
@@ -53,6 +52,7 @@ spec:
       - hostPath:
           path: /sys
         name: sys
+        mountPropagation: HostToContainer
       - hostPath:
           path: /
         name: root
