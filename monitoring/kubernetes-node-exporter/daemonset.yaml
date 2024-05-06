@@ -49,7 +49,9 @@ spec:
       volumes:
       - hostPath:
           path: /sys
+          type: Directory
         name: sys
       - hostPath:
           path: /
+          type: Directory
         name: root
