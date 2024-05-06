@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: pipelines-argocd/production
+    path: pipelines-argocd/development
     repoURL: https://github.com/BootCampDevOpsProject/GitOps.git
     targetRevision: main
   syncPolicy:
