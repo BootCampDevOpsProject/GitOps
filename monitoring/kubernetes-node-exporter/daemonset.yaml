@@ -17,8 +17,6 @@ spec:
         app.kubernetes.io/component: exporter
         app.kubernetes.io/name: node-exporter
     spec:
-      hostRootFsMount:
-        enabled: false
       containers:
       - args:
         - --path.sysfs=/host/sys
@@ -40,19 +38,11 @@ spec:
             cpu: 102m
             memory: 180Mi
         volumeMounts:
-        - mountPath: /host/sys
-          mountPropagation: HostToContainer
-          name: sys
-          readOnly: true
         - mountPath: /host/root
           mountPropagation: HostToContainer
           name: root
           readOnly: true
       volumes:
-      - hostPath:
-          path: /sys
-        name: sys
-        mountPropagation: HostToContainer
       - hostPath:
           path: /
         name: root
