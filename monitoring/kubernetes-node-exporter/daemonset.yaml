@@ -37,13 +37,4 @@ spec:
           requests:
             cpu: 102m
             memory: 180Mi
-        volumeMounts:
-        - mountPath: /host/sys
-          mountPropagation: HostToContainer
-          name: sys
-          readOnly: true
-      volumes:
-      - hostPath:
-          path: /sys
-        name: sys
 
