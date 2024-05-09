@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: api-backend-argocd
+  name: api-backend-argocd-prod
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: Backend/api-backend/overlays/production
+    path: Backend/api-backend-prod/overlays/production
     repoURL: https://github.com/BootCampDevOpsProject/GitOps.git
     targetRevision: main
   syncPolicy:
