@@ -3,4 +3,4 @@ data:
   ENVIRONMENT: prod
 kind: ConfigMap
 metadata:
-  name: api-backend-configmap
+  name: api-backend-production-configmap

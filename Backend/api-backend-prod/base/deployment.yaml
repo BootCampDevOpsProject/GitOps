@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-backend-production
+  annotations:
+    configmap.reloader.stakater.com/reload: "api-backend-production-configmap" 
+    #secret.reloader.stakater.com/reload: "api-backend-production-secret"
+spec:
+  selector:
+    matchLabels:
+      app: api-backend-production
+  template:
+    metadata:
+      labels:
+        app: api-backend-production
+    spec:
+      containers:
+        - name: api-backend-production
+          envFrom:
+            - configMapRef:
+                name: api-backend-production-configmap
+           #- secretRef:
+              #  name: api-backend-production-secret
+          image: serret18/api-backend-production
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+              name: http
+              protocol: TCP

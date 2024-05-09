@@ -7,6 +7,7 @@ resources:
 patches:
 - path: ./limits.yaml
 - path: ./tolerations.yaml
+- path: ./patch.yaml
 images:
 - name: serret18/api-backend-production
   newName: serret18/api-backend-production
