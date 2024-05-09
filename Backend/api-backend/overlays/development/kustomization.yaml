@@ -9,4 +9,4 @@ patches:
 images:
 - name: serret18/api-backend
   newName: serret18/api-backend
-  newTag: da250cf320ecc11614bdbadbfdf2bf41546f1bbe
+  newTag: ea852e0d3840d31d7e73f7effb70f3eb19b39d6e
