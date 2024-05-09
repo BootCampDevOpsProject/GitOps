@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-frontend
+  name: web-frontend-production
 spec:
   template:
     spec:
       containers:
-      - name: web-frontend
+      - name: web-frontend-production
         resources:
           limits:
             cpu: 200m

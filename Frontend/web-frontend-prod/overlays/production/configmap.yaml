@@ -4,4 +4,4 @@ data:
 
 kind: ConfigMap
 metadata:
-  name: web-frontend-configmap
+  name: web-frontend-production-configmap

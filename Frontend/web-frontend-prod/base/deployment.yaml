@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-frontend-production
+  annotations:
+    configmap.reloader.stakater.com/reload: "web-frontend-production-configmap" 
+    #secret.reloader.stakater.com/reload: "web-frontend-production-secret"
+spec:
+  selector:
+    matchLabels:
+      app: web-frontend-production
+  template:
+    metadata:
+      labels:
+        app: web-frontend-production
+    spec:
+      containers:
+        - name: web-frontend-production
+          envFrom:
+            - configMapRef:
+                name: web-frontend-production-configmap
+            #- secretRef:
+                #name: web-frontend-production-secret
+          image: serret18/web-frontend-production
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5173
+              name: http
+              protocol: TCP

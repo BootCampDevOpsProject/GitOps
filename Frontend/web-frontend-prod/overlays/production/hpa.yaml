@@ -1,12 +1,12 @@
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: web-frontend-hpa
+  name: web-frontend-production-hpa
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: web-frontend
+    name: web-frontend-production
   minReplicas: 3
   maxReplicas: 6
   metrics:

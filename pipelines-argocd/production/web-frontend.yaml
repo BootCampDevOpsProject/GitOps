@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: Frontend/web-frontend/overlays/production
+    path: Frontend/web-frontend-prod/overlays/production
     repoURL: https://github.com/BootCampDevOpsProject/GitOps.git
     targetRevision: main
   syncPolicy:
