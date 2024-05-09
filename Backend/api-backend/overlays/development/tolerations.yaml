@@ -8,5 +8,5 @@ spec:
       tolerations:
         - key: "dedicated"
           operator: "Equal"
-          value: "prod"
+          value: "dev"
           effect: "NoSchedule"

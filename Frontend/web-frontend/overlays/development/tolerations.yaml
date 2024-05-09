@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-backend
+  name: web-frontend
 spec:
   template:
     spec:
       tolerations:
         - key: "dedicated"
           operator: "Equal"
-          value: "prod"
+          value: "dev"
           effect: "NoSchedule"
