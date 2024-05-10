@@ -9,4 +9,4 @@ patches:
 images:
 - name: serret18/web-frontend
   newName: serret18/web-frontend
-  newTag: 0f892569b0e26c296bfebd8c1dc216c85d23174c
+  newTag: 2a9551f78d540664caddd1bff72141a1ab92afee
