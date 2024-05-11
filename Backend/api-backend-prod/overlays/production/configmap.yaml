@@ -1,6 +1,7 @@
-apiVersion: v1
+apiVersion: v1  # Versión de la API de Kubernetes que se está utilizando para definir este recurso.
 data:
-  ENVIRONMENT: prod
-kind: ConfigMap
+  ENVIRONMENT: prod  # Datos de la ConfigMap. En este caso, una variable de entorno llamada "ENVIRONMENT" con el valor "prod".
+kind: ConfigMap  # Tipo de recurso que se está creando, en este caso, una ConfigMap para almacenar datos de configuración.
 metadata:
-  name: api-backend-production-configmap
+  name: api-backend-production-configmap  # Nombre de la ConfigMap que se está creando.
+
