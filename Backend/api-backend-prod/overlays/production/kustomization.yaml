@@ -1,12 +1,12 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1  # Versión de la API de Kustomize que se está utilizando.
+kind: Kustomization  # Tipo de configuración de Kustomize.
 resources:
-- ../../base
-- configmap.yaml
+- ../../base  # Ruta al directorio base que contiene los recursos de configuración predeterminados.
+- configmap.yaml  # Archivo de ConfigMap que se utilizará para la aplicación.
 patches:
-- path: ./limits.yaml
-- path: ./tolerations.yaml
+- path: ./limits.yaml  # Ruta al archivo de parche "limits.yaml" que se aplicará a los recursos.
+- path: ./tolerations.yaml  # Ruta al archivo de parche "tolerations.yaml" que se aplicará a los recursos.
 images:
-- name: serret18/api-backend-production
-  newName: serret18/api-backend-production
-  newTag: 05fac25e425f3d449ed21aa0174f5021acc5e46b
+- name: serret18/api-backend-production  # Nombre de la imagen original que se encuentra en los recursos.
+  newName: serret18/api-backend-production  # Nuevo nombre de la imagen que se aplicará en los recursos.
+  newTag: 05fac25e425f3d449ed21aa0174f5021acc5e46b  # Nueva etiqueta de la imagen que se aplicará en los recursos.
