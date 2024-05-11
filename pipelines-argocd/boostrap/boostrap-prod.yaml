@@ -1,5 +1,3 @@
-# Archivo para la creación de los recursos de manera automática para el ambiente PROD, alojados en la carpeta production
-
 apiVersion: argoproj.io/v1alpha1 # Version de la API que se esta utilizando
 kind: Application # Tipo de recurso que se esta creando, en este caso de tipo Application
 metadata:
