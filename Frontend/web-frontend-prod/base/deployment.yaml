@@ -1,29 +1,33 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: apps/v1  # Versión de la API de Kubernetes utilizada para este recurso Deployment.
+kind: Deployment  # Tipo de recurso, en este caso, un Deployment.
 metadata:
-  name: web-frontend-production
+  name: web-frontend  # Nombre del Deployment.
   annotations:
-    configmap.reloader.stakater.com/reload: "web-frontend-production-configmap" 
-    #secret.reloader.stakater.com/reload: "web-frontend-production-secret"
+    configmap.reloader.stakater.com/reload: "web-frontend-configmap" 
+    # Anotación para indicar al controlador de recarga de ConfigMap que recargue la ConfigMap llamada "web-frontend-configmap"
+    # cuando se actualice.
+    #secret.reloader.stakater.com/reload: "web-frontend-secret"
+    # Esta anotación sería utilizada para indicar al controlador de recarga de Secret que debe recargar el Secret llamado "web-frontend-secret"
+    # cuando se actualice. Está comentado por ahora.
 spec:
   selector:
     matchLabels:
-      app: web-frontend-production
+      app: web-frontend  # Selector para identificar qué Pods debe gestionar este Deployment.
   template:
     metadata:
       labels:
-        app: web-frontend-production
+        app: web-frontend  # Etiqueta que se aplica a los Pods gestionados por este Deployment.
     spec:
       containers:
-        - name: web-frontend-production
+        - name: web-frontend  # Nombre del contenedor.
           envFrom:
             - configMapRef:
-                name: web-frontend-production-configmap
+                name: web-frontend-configmap  # Nombre de la ConfigMap cuyos datos se inyectarán como variables de entorno en el contenedor.
             #- secretRef:
-                #name: web-frontend-production-secret
-          image: serret18/web-frontend-production
-          imagePullPolicy: Always
+                #name: web-frontend-secret  # Nombre del Secret cuyos datos se inyectarán como variables de entorno en el contenedor. Comentado por ahora.
+          image: serret18/web-frontend  # Nombre de la imagen Docker utilizada para crear el contenedor.
+          imagePullPolicy: Always  # Política de extracción de imagen que asegura que siempre se descarga la última versión de la imagen.
           ports:
-            - containerPort: 5173
-              name: http
-              protocol: TCP
+            - containerPort: 5173  # Puerto en el que el contenedor expone su servicio.
+              name: http  # Nombre del puerto, útil para identificar su función.
+              protocol: TCP  # Protocolo utilizado por el puerto.
