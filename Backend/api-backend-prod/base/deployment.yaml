@@ -1,29 +1,34 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: apps/v1  # Versión de la API de Kubernetes que se está utilizando.
+kind: Deployment  # Tipo de recurso que se está creando, en este caso, un Deployment.
 metadata:
-  name: api-backend-production
+  name: api-backend-production  # Nombre del Deployment.
   annotations:
-    configmap.reloader.stakater.com/reload: "api-backend-production-configmap" 
+    configmap.reloader.stakater.com/reload: "api-backend-production-configmap"
+    # Esta anotación indica al controlador de recarga de ConfigMap que debe recargar la ConfigMap llamada "api-backend-production-configmap"
+    # cuando se actualice.
     #secret.reloader.stakater.com/reload: "api-backend-production-secret"
+    # Esta anotación sería utilizada para indicar al controlador de recarga de Secret que debe recargar el Secret llamado "api-backend-production-secret"
+    # cuando se actualice.
 spec:
   selector:
     matchLabels:
-      app: api-backend-production
+      app: api-backend-production  # Selector que identifica qué Pods deben ser gestionados por este Deployment.
   template:
     metadata:
       labels:
-        app: api-backend-production
+        app: api-backend-production  # Etiqueta que se aplica a los Pods gestionados por este Deployment.
     spec:
       containers:
-        - name: api-backend-production
+        - name: api-backend-production  # Nombre del contenedor.
           envFrom:
             - configMapRef:
-                name: api-backend-production-configmap
+                name: api-backend-production-configmap  # Nombre de la ConfigMap cuyos datos se inyectarán como variables de entorno en el contenedor.
            #- secretRef:
               #  name: api-backend-production-secret
-          image: serret18/api-backend-production
-          imagePullPolicy: Always
+              # Nombre del Secret cuyos datos se inyectarán como variables de entorno en el contenedor. Comentado por ahora.
+          image: serret18/api-backend-production  # Nombre de la imagen Docker utilizada para crear el contenedor.
+          imagePullPolicy: Always  # Política de extracción de imagen que asegura que siempre se descarga la última versión de la imagen.
           ports:
-            - containerPort: 5000
-              name: http
-              protocol: TCP
+            - containerPort: 5000  # Puerto en el que el contenedor expone su servicio.
+              name: http  # Nombre del puerto, útil para identificar su función.
+              protocol: TCP  # Protocolo utilizado por el puerto.
