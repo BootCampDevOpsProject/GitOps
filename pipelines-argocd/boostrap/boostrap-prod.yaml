@@ -5,7 +5,7 @@ metadata:
   namespace: argocd     # Namespace en el cuál se creará el recurso
 spec:
   destination:
-    namespace: argocd   Namespace en el cual se creará el recurso
+    namespace: argocd   # Namespace en el cual se creará el recurso
     server: https://kubernetes.default.svc  # Nombre del cluster en el que se crearán los recursos
   project: default  # Nombre del projecto
   source:
