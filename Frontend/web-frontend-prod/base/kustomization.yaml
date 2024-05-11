@@ -1,6 +1,5 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1  # Versión de la API de Kustomize que se está utilizando.
+kind: Kustomization  # Tipo de objeto Kustomization.
 resources:
-- deployment.yaml
-- service.yaml
-
+- deployment.yaml  # Lista de recursos que se incluirán en la aplicación. En este caso, el Deployment se define en un archivo llamado "deployment.yaml".
+- service.yaml  # El archivo "service.yaml" define un servicio para la aplicación.
