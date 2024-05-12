@@ -6,7 +6,3 @@ resources:
 patches:
 - path: ./limits.yaml  # Ruta al archivo de parche "limits.yaml" que se aplicará a los recursos.
 - path: ./tolerations.yaml  # Ruta al archivo de parche "tolerations.yaml" que se aplicará a los recursos.
-images:
-- name: serret18/web-frontend-production  # Nombre de la imagen original que se encuentra en los recursos.
-  newName: serret18/web-frontend-production  # Nuevo nombre de la imagen que se aplicará en los recursos.
-  newTag: 2a9551f78d540664caddd1bff72141a1ab92afee  # Nueva etiqueta de la imagen que se aplicará en los recursos.
