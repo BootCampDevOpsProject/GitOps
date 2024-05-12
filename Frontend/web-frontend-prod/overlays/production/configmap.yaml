@@ -3,4 +3,4 @@ data:
   ENVIRONMENT: dev  # Datos de la ConfigMap. En este caso, una variable de entorno llamada "ENVIRONMENT" con el valor "dev".
 kind: ConfigMap  # Tipo de recurso que se está creando, en este caso, un ConfigMap para almacenar datos de configuración.
 metadata:
-  name: web-frontend-configmap  # Nombre del ConfigMap que se está creando.
+  name: web-frontend-production-configmap  # Nombre del ConfigMap que se está creando.
