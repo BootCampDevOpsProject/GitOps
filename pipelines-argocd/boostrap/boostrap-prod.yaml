@@ -1,20 +1,20 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
+apiVersion: argoproj.io/v1alpha1 # Version de la API que se esta utilizando
+kind: Application # Tipo de recurso que se esta creando, en este caso de tipo Application
 metadata:
-  name: bootstrap-prod
-  namespace: argocd
+  name: bootstrap-prod  # Nombre de la aplicación
+  namespace: argocd     # Namespace en el cuál se creará el recurso
 spec:
   destination:
-    namespace: argocd
-    server: https://kubernetes.default.svc
-  project: default
+    namespace: argocd   # Namespace en el cual se creará el recurso
+    server: https://kubernetes.default.svc  # Nombre del cluster en el que se crearán los recursos
+  project: default  # Nombre del projecto
   source:
-    path: pipelines-argocd/production
-    repoURL: https://github.com/BootCampDevOpsProject/GitOps.git
-    targetRevision: main
+    path: pipelines-argocd/production    # Carpera dónde se encuentran los archivos con los recursos a crear 
+    repoURL: https://github.com/BootCampDevOpsProject/GitOps.git # Repositorio dónde estan alojados los archivos
+    targetRevision: main   # Revisión de la rama main del repositorio
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+      - CreateNamespace=true   # Creación de namespace si no esta creado
